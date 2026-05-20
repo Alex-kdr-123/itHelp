@@ -1,0 +1,393 @@
+/* --- СТИЛИ ДЛЯ ШАПКИ САЙТА И ОБЩИХ ОТСТУПОВ --- */
+
+/* 1. Универсальные стили для контейнера на ВСЁМ сайте */
+.container {
+    padding-left: 20px; /* Отступ слева */
+    padding-right: 20px; /* Отступ справа */
+}
+
+/* 2. Фиксируем шапку вверху, делаем её фон белым и добавляем тень */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    height: 80px; /* Фиксируем высоту для стабильности */
+}
+
+/* 3. Стили для внутреннего контейнера (логотип + меню) */
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Занимаем всю высоту шапки */
+    max-width: 1280px; /* Ограничиваем максимальную ширину контента */
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+/* 4. Стили для логотипа */
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin: 0;
+}
+
+/* 5. Стили для навигационного меню */
+.header .nav {
+    display: flex;
+    gap: 25px; /* Расстояние между ссылками */
+}
+
+/* 6. Стили для самих ссылок в меню */
+.header .nav a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* 7. Эффект при наведении курсора на ссылку */
+.header .nav a:hover {
+    color: #4CAF50;
+}
+
+/* --- СТИЛИ ДЛЯ ПЕРВОГО ЭКРАНА (HERO) --- */
+
+.hero {
+    /* 1. Фоновое изображение и градиент */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), /* Полупрозрачный белый слой */
+        url('https://placehold.co/1920x800/E8F5E9/png?text=IT+Workspace'); /* Плейсхолдер изображения */
+    background-size: cover; /* Растягиваем изображение на весь блок */
+    background-position: center; /* Центрируем изображение */
+    color: #212121; /* Темный цвет текста для контраста */
+    text-align: center; /* Центрируем текст */
+    padding-top: 120px; /* Отступ сверху, чтобы контент не прилипал к шапке */
+    padding-bottom: 120px; /* Отступ снизу */
+}
+
+/* 2. Стили для заголовка H2 */
+.hero h2 {
+    font-size: clamp(36px, 6vw, 50px); /* Адаптивный размер шрифта */
+    margin-bottom: 15px; /* Отступ снизу от заголовка */
+    font-weight: bold;
+}
+
+/* 3. Стили для описательного текста */
+.hero p {
+    font-size: clamp(16px, 2.5vw, 18px); /* Адаптивный размер шрифта */
+    max-width: 70ch; /* Ограничиваем ширину строки для удобства чтения */
+    margin: 0 auto 25px auto; /* Центрируем параграф и делаем отступ снизу */
+    line-height: 1.6;
+}
+
+/* 4. Стили для основной кнопки */
+.hero .btn-main {
+    display: inline-block;
+    padding: 12px 35px;
+    font-weight: bold;
+    border-radius: 40px; /* Скругление углов кнопки */
+    background-color: #4CAF50;
+    color: white !important;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* 5. Эффект при наведении на кнопку */
+.hero .btn-main:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Небольшой подъем кнопки при наведении */
+}
+
+/* --- СТИЛИ ДЛЯ БЛОКА ПРОБЛЕМЫ КЛИЕНТА --- */
+
+.problems {
+    padding: 60px 0; /* Отступы сверху и снизу для "воздуха" */
+    text-align: center; /* Центрируем заголовок и сетку */
+}
+
+.problems h2 {
+    font-size: clamp(28px, 4vw, 36px); /* Адаптивный заголовок */
+    margin-bottom: 40px; /* Отступ после заголовка */
+}
+
+/* 1. Создаём сетку для карточек */
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Адаптивная сетка */
+    gap: 30px; /* Расстояние между карточками */
+    max-width: 1100px; /* Ограничиваем ширину сетки */
+    margin: 0 auto; /* Центрируем сетку */
+}
+
+/* 2. Стили для каждой карточки проблемы */
+.problem-card {
+    background-color: #fafafa; /* Светло-серый фон карточки */
+    padding: 25px;
+    border-radius: 15px; /* Скругление углов */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Лёгкая тень для объёма */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавные эффекты */
+}
+
+/* Эффект при наведении на карточку */
+.problem-card:hover {
+    transform: translateY(-8px); /* Поднимаем карточку */
+    box-shadow: -4px -4px rgba(76,175,81, .1), -8px -8px rgba(76,175,81, .1), -16px -16px rgba(76,175,81, .1), -32px -32px rgba(76,175,81, .1);
+}
+
+/* Стили для иконки внутри карточки */
+.problem-card img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+/* Стили для заголовка проблемы (H3) */
+.problem-card h3 {
+    font-size: clamp(18px, 2.5vw, 20px);
+    color: #4CAF50; /* Зелёный цвет для заголовков проблем */
+    margin-bottom: 10px;
+}
+
+/* Стили для текста описания */
+.problem-card p {
+    font-size: clamp(14px, 2vw, 15px);
+    color: #777;
+}
+
+/* --- СТИЛИ ДЛЯ БЛОКА "НАШЕ РЕШЕНИЕ" (УСЛУГИ) --- */
+
+.services {
+    padding: 60px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Центрируем заголовок и сетку */
+    background-color: #e8f5e9; /* Светло-зелёный фон для отделения от предыдущего блока */
+}
+
+.services h2 {
+    font-size: clamp(28px, 4vw, 36px);
+    margin-bottom: 40px;
+}
+
+/* 1. Создаём такую же сетку, как и для "Проблем" */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 2. Стили для карточек услуг */
+.service-card {
+    background-color: #fffaf7; /* Персиковый фон для карточек */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект при наведении на карточку услуги */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: -4px -4px rgba(76,175,81, .1), -8px -8px rgba(76,175,81, .1), -16px -16px rgba(76,175,81, .1), -32px -32px rgba(76,175,81, .1);
+}
+
+/* Стили для иконки внутри карточки услуги */
+.service-card img {
+    width: 64px; /* Чуть больше иконка */
+    margin-bottom: 15px;
+}
+
+/* Стили для заголовка услуги (H3) */
+.service-card h3 {
+    font-size: clamp(18px, 2.5vw, 20px);
+    color: #4CAF50; /* Зелёный цвет для заголовков услуг */
+    margin-bottom: 10px;
+}
+
+/* Стили для текста описания услуги */
+.service-card p {
+    font-size: clamp(14px, 2vw, 15px);
+    color: #777;
+}
+
+/* --- СТИЛИ ДЛЯ БЛОКА "ТАРИФЫ" --- */
+
+.prices {
+    padding: 80px 0; /* Больше отступ, так как это важный блок */
+    text-align: center;
+}
+
+.prices h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 20px;
+}
+
+.prices p {
+    font-size: clamp(16px, 2.5vw, 18px);
+    max-width: 70ch;
+    margin: 0 auto 40px auto;
+}
+
+/* 1. Создаем сетку для карточек тарифов */
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Карточки чуть шире */
+    gap: 40px; /* Больше расстояние между тарифами */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 2. Базовые стили для карточки тарифа */
+.price-card {
+    background-color: #ffffff; /* Белый фон */
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s ease-in-out; /* Плавный переход для всех свойств */
+}
+
+/* 3. Выделение самого популярного тарифа (Бизнес) */
+.price-card.active-price {
+    box-shadow:
+        inset -4px -4px rgba(76,175,81, .1),
+        inset -8px -8px rgba(76,175,81, .1),
+        inset -16px -16px rgba(76,175,81, .1),
+        inset -32px -32px rgba(76,175,81, .1);
+}
+
+.price-card.active-price h3 {
+    color: #4CAF50 !important; /* Зеленый цвет для заголовка активного тарифа */
+}
+
+/* 4. Стили для заголовка тарифа */
+.price-card h3 {
+    font-size: clamp(24px, 4vw, 32px);
+    margin-bottom: 15px;
+}
+
+/* 5. Стили для цены */
+.price-card .price {
+    font-size: clamp(36px, 8vw, 48px);
+    font-weight: bold;
+    margin-bottom: 30px;
+    display: block; /* Чтобы сработали отступы сверху/снизу */
+}
+
+/* 6. Стили для списка преимуществ */
+.price-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px; /* Отступ под списком */
+}
+
+.price-card ul li {
+    font-size: clamp(16px, 2vw, 18px);
+    margin-bottom: 15px;
+    display: flex; /* Используем Flex для иконок */
+    align-items: center; /* Вертикальное выравнивание иконки и текста */
+}
+
+.price-card ul li::before {
+    content: '\f00c'; /* Код иконки "check" из FontAwesome (SOLID) */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 12px;
+    color: #4CAF50;
+}
+
+/* 7. Стили для кнопки "Выбрать" в карточке */
+.btn-card {
+    display: inline-block;
+    padding: 12px 35px;
+    font-weight: bold;
+    border-radius: 40px;
+    background-color: #4CAF50;
+    color: white !important;
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    transition: background-color 0.3s ease;
+}
+
+.btn-card:hover {
+    background-color: #45a049;
+}
+
+/* --- СТИЛИ ДЛЯ БЛОКА "КОНТАКТНАЯ ФОРМА" --- */
+
+.contact-form {
+    padding: 80px 0; /* Отступы для блока */
+    text-align: center; /* Центрируем заголовок и саму форму */
+}
+
+.contact-form h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 20px;
+}
+
+.contact-form p {
+    font-size: clamp(16px, 2.5vw, 18px);
+    max-width: 70ch;
+    margin: 0 auto 40px auto;
+}
+
+/* 1. Стили для самой формы */
+.contact-form form {
+    max-width: 600px; /* Ограничиваем максимальную ширину формы */
+    margin: 0 auto; /* Центрируем форму */
+    text-align: left; /* Выравниваем поля по левому краю */
+}
+
+/* 2. Стили для полей ввода (name, phone) и текстового поля (message) */
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Занимают всю ширину родительского блока */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Скругление углов */
+    border: 1px solid #dcdcdc; /* Светло-серая рамка */
+    font-size: clamp(16px, 2.5vw, 16px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект при фокусе на поле ввода */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none; /* Убираем стандартный контур */
+    border-color: #4CAF50; /* Меняем цвет рамки на зеленый */
+    box-shadow: 0 0 5px rgba(76, 175, 81, 0.5); /* Добавляем свечение */
+}
+
+/* Стили для текстового поля (сообщение) */
+.contact-form textarea {
+    resize: vertical; /* Разрешаем изменять высоту только вертикально */
+    min-height: 150px; /* Минимальная высота поля */
+}
+
+/* 3. Стили для кнопки отправки (она уже имеет класс .btn-main) */
+.contact-form .btn-main {
+    display: inline-block;
+    padding: 14px 40px;
+}
+
+
+/* --- СТИЛИ ДЛЯ ПОДВАЛА (FOOTER) --- */
+
+.footer {
+    background-color: #333333; /* Тёмно-серый фон */
+    color: #ffffff; /* Белый цвет текста */
+    padding: 30px 0; /* Вертикальные отступы */
+    margin-top: 40px; /* Отступ сверху, чтобы отделить от формы */
+}
+
+.footer .container {
+    text-align: center; /* Центрируем текст */
+}
+
+.footer p {
+    font-size: clamp(14px, 2vw, 15px); /* Адаптивный размер шрифта */
+    line-height: 1.5;
+    margin: 0; /* Убираем стандартные отступы у параграфа */
+}
